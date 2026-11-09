@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PILLOW — Sleep Better</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20240320/ourmid/pngtree-rectangular-pillow-mockup-realistic-style-png-image_12017139.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="announcement">
+        FREE SHIPPING ON ALL ORDERS OVER $100
+    </div>
+
+    <header>
+        <a href="#home" class="logo">PILLOW<span>.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Shop</a>
+            <a href="#about">Our Story</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <button onclick="focusSearch()">⌕</button>
+            <button onclick="toggleWishlist()">♡</button>
+            <button onclick="toggleCart()">Bag <span id="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <span class="eyebrow">THE ART OF BETTER SLEEP</span>
+                <h1>Make every<br>night a <i>dream.</i></h1>
+                <p>Discover a new level of comfort with thoughtfully designed pillows made for your best sleep ever.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn dark">Shop Collection ↗</a>
+                    <a href="#about" class="text-link">Discover our story</a>
+                </div>
+                <div class="hero-rating">
+                    <div class="stars">★★★★★</div>
+                    <span>4.9/5 from 2,400+ happy sleepers</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1100" alt="Luxury bedroom">
+                <div class="hero-note">
+                    <span>✦</span>
+                    <div>
+                        <strong>Cloud-like comfort</strong>
+                        <small>Made for your dreams</small>
+                    </div>
+                </div>
+                <div class="hero-circle">SLEEP<br>BETTER<br>LIVE BETTER</div>
+            </div>
+        </section>
+
+        <section class="brands">
+            <span>DESIGNED FOR COMFORT</span>
+            <span>✦ PREMIUM MATERIALS</span>
+            <span>✦ BETTER EVERY NIGHT</span>
+            <span>✦ MADE WITH CARE</span>
+        </section>
+
+        <section class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">☁</div>
+                <h3>Cloud Softness</h3>
+                <p>Experience incredible softness every night.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">✧</div>
+                <h3>Perfect Support</h3>
+                <p>Designed to support your sleeping position.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">♧</div>
+                <h3>Quality Materials</h3>
+                <p>Carefully selected premium fabrics.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">♡</div>
+                <h3>Made With Love</h3>
+                <p>Every detail created for your comfort.</p>
+            </div>
+        </section>
+
+        <section class="products section" id="products">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">EXPLORE OUR COLLECTION</span>
+                    <h2>Find your perfect <i>comfort.</i></h2>
+                    <p>Beautifully made pillows for every kind of sleeper.</p>
+                </div>
+                <a href="#products" class="text-link">Explore all products ↗</a>
+            </div>
+
+            <div class="shop-tools">
+                <div class="filters">
+                    <button class="filter active" onclick="filterProducts('all',this)">All products</button>
+                    <button class="filter" onclick="filterProducts('soft',this)">Soft pillows</button>
+                    <button class="filter" onclick="filterProducts('memory',this)">Memory foam</button>
+                    <button class="filter" onclick="filterProducts('luxury',this)">Luxury</button>
+                </div>
+                <input type="search" id="search" placeholder="Search pillows..." oninput="searchProducts()">
+            </div>
+
+            <div class="product-grid" id="product-grid">
+
+                <article class="product-card" data-category="soft" data-name="Cloud Dream Pillow">
+                    <div class="product-image">
+                        <span class="product-label">BESTSELLER</span>
+                        <button class="heart" onclick="addWishlist(this,'Cloud Dream Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=700" alt="Cloud Dream Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>SOFT COLLECTION</span>
+                        <h3>Cloud Dream Pillow</h3>
+                        <p>Ultra soft premium comfort</p>
+                        <div class="product-price">
+                            <strong>$49.99</strong>
+                            <button onclick="addToCart('Cloud Dream Pillow',49.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="luxury" data-name="Luxury Sleep Pillow">
+                    <div class="product-image">
+                        <span class="product-label sale">-20%</span>
+                        <button class="heart" onclick="addWishlist(this,'Luxury Sleep Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700" alt="Luxury Sleep Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>LUXURY COLLECTION</span>
+                        <h3>Luxury Sleep Pillow</h3>
+                        <p>Elegant and extra comfortable</p>
+                        <div class="product-price">
+                            <strong>$79.99</strong>
+                            <button onclick="addToCart('Luxury Sleep Pillow',79.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="memory" data-name="Memory Cloud Pillow">
+                    <div class="product-image">
+                        <span class="product-label">POPULAR</span>
+                        <button class="heart" onclick="addWishlist(this,'Memory Cloud Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700" alt="Memory Cloud Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>MEMORY COLLECTION</span>
+                        <h3>Memory Cloud Pillow</h3>
+                        <p>Ergonomic memory foam</p>
+                        <div class="product-price">
+                            <strong>$59.99</strong>
+                            <button onclick="addToCart('Memory Cloud Pillow',59.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="soft" data-name="Cotton Soft Pillow">
+                    <div class="product-image">
+                        <button class="heart" onclick="addWishlist(this,'Cotton Soft Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700" alt="Cotton Soft Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>SOFT COLLECTION</span>
+                        <h3>Cotton Soft Pillow</h3>
+                        <p>Natural cotton feeling</p>
+                        <div class="product-price">
+                            <strong>$39.99</strong>
+                            <button onclick="addToCart('Cotton Soft Pillow',39.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="luxury" data-name="Royal Comfort Pillow">
+                    <div class="product-image">
+                        <span class="product-label">PREMIUM</span>
+                        <button class="heart" onclick="addWishlist(this,'Royal Comfort Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700" alt="Royal Comfort Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>LUXURY COLLECTION</span>
+                        <h3>Royal Comfort Pillow</h3>
+                        <p>Premium bedroom experience</p>
+                        <div class="product-price">
+                            <strong>$89.99</strong>
+                            <button onclick="addToCart('Royal Comfort Pillow',89.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="memory" data-name="Balance Memory Pillow">
+                    <div class="product-image">
+                        <button class="heart" onclick="addWishlist(this,'Balance Memory Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1631049035182-249067d7618e?w=700" alt="Balance Memory Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>MEMORY COLLECTION</span>
+                        <h3>Balance Memory Pillow</h3>
+                        <p>Balanced sleeping support</p>
+                        <div class="product-price">
+                            <strong>$64.99</strong>
+                            <button onclick="addToCart('Balance Memory Pillow',64.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="soft" data-name="Dream White Pillow">
+                    <div class="product-image">
+                        <button class="heart" onclick="addWishlist(this,'Dream White Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=700" alt="Dream White Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>SOFT COLLECTION</span>
+                        <h3>Dream White Pillow</h3>
+                        <p>Clean and simple design</p>
+                        <div class="product-price">
+                            <strong>$44.99</strong>
+                            <button onclick="addToCart('Dream White Pillow',44.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="luxury" data-name="Signature Pillow">
+                    <div class="product-image">
+                        <span class="product-label sale">NEW</span>
+                        <button class="heart" onclick="addWishlist(this,'Signature Pillow')">♡</button>
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700" alt="Signature Pillow">
+                    </div>
+                    <div class="product-info">
+                        <span>LUXURY COLLECTION</span>
+                        <h3>Signature Pillow</h3>
+                        <p>Our signature comfort</p>
+                        <div class="product-price">
+                            <strong>$99.99</strong>
+                            <button onclick="addToCart('Signature Pillow',99.99)">Add +</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <p class="no-results" id="no-results">No products found. Try another search.</p>
+        </section>
+
+        <section class="promo">
+            <div class="promo-image">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1000" alt="Cozy bedroom">
+            </div>
+            <div class="promo-text">
+                <span class="eyebrow">A LITTLE MORE COMFORT</span>
+                <h2>Your bedroom deserves a <i>refresh.</i></h2>
+                <p>Transform your sleeping space into a peaceful sanctuary with our carefully selected collection.</p>
+                <a href="#products" class="btn light">Discover the collection ↗</a>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=900" alt="Beautiful interior">
+            </div>
+            <div class="about-text">
+                <span class="eyebrow">OUR STORY</span>
+                <h2>We believe in the power of <i>good sleep.</i></h2>
+                <p>At PILLOW, we believe that comfort changes everything. A good night of sleep helps you wake up feeling refreshed, inspired and ready for a new day.</p>
+                <p>That's why we focus on beautiful design, carefully selected materials and thoughtful details.</p>
+                <a href="#contact" class="btn dark">Learn More ↗</a>
+            </div>
+        </section>
+
+        <section class="numbers">
+            <div><h2>50K+</h2><p>Happy Customers</p></div>
+            <div><h2>25+</h2><p>Unique Products</p></div>
+            <div><h2>4.9</h2><p>Average Rating</p></div>
+            <div><h2>100%</h2><p>Comfort Focused</p></div>
+        </section>
+
+        <section class="reviews section" id="reviews">
+            <div class="section-heading centered">
+                <div>
+                    <span class="eyebrow">CUSTOMER STORIES</span>
+                    <h2>Love from our <i>community.</i></h2>
+                    <p>Real experiences from people who love better sleep.</p>
+                </div>
+            </div>
+
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h3>"Absolutely amazing!"</h3>
+                    <p>The softness is incredible. My bedroom feels so much more comfortable now. Definitely worth it!</p>
+                    <strong>Sarah M.</strong>
+                    <span>Verified Customer</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h3>"My best purchase."</h3>
+                    <p>Beautiful quality and lovely design. I really enjoy using my new pillow every night.</p>
+                    <strong>James R.</strong>
+                    <span>Verified Customer</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h3>"Perfect comfort."</h3>
+                    <p>Everything from the quality to the packaging feels premium. I would absolutely recommend it.</p>
+                    <strong>Emma L.</strong>
+                    <span>Verified Customer</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq section">
+            <div class="section-heading centered">
+                <div>
+                    <span class="eyebrow">NEED HELP?</span>
+                    <h2>Frequently asked <i>questions.</i></h2>
+                </div>
+            </div>
+
+            <div class="faq-list">
+                <details>
+                    <summary>What materials are used in your pillows?</summary>
+                    <p>Our collection includes carefully selected soft fabrics, cotton and memory foam options.</p>
+                </details>
+                <details>
+                    <summary>How long does delivery take?</summary>
+                    <p>Delivery times depend on your location. We will provide delivery details when ordering.</p>
+                </details>
+                <details>
+                    <summary>Can I order multiple pillows?</summary>
+                    <p>Yes! You can add multiple products and quantities to your shopping bag.</p>
+                </details>
+                <details>
+                    <summary>How can I contact customer support?</summary>
+                    <p>You can contact us using the contact section at the bottom of this page.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="newsletter" id="contact">
+            <span class="eyebrow">STAY IN THE COMFORT ZONE</span>
+            <h2>Sweet dreams start <i>here.</i></h2>
+            <p>Join our community and get exclusive offers and updates.</p>
+            <form onsubmit="subscribe(event)">
+                <input type="email" id="email" placeholder="Your email address" required>
+                <button type="submit">Join Us ↗</button>
+            </form>
+            <small>By subscribing, you agree to receive our updates.</small>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <div>
+                <a href="#home" class="logo">PILLOW<span>.</span></a>
+                <p>Comfort for every night.<br>Better dreams for every day.</p>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#about">Our Story</a>
+            </div>
+            <div>
+                <h3>Help</h3>
+                <a href="#contact">Contact Us</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#products">Collections</a>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <a href="#">Instagram ↗</a>
+                <a href="#">Pinterest ↗</a>
+                <a href="#">Facebook ↗</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 PILLOW. All rights reserved.</span>
+            <span>Made for better dreams ✦</span>
+        </div>
+    </footer>
+
+    <div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+    <aside class="side-panel" id="cart-panel">
+        <div class="panel-header">
+            <h2>Your Shopping Bag</h2>
+            <button onclick="closePanels()">✕</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="panel-bottom">
+            <div class="total-line">
+                <strong>Subtotal</strong>
+                <strong>$<span id="total">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Continue to Checkout ↗</button>
+        </div>
+    </aside>
+
+    <aside class="side-panel" id="wishlist-panel">
+        <div class="panel-header">
+            <h2>Your Wishlist ♡</h2>
+            <button onclick="closePanels()">✕</button>
+        </div>
+        <div id="wishlist-items"></div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
